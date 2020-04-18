@@ -6,7 +6,7 @@ public class StatComponent : MonoBehaviour
 {
     public float baseHealth;
     public float baseArmor;
-    public float a; 
+    public float baseJumpCount; 
     void Start()
     {
     }
