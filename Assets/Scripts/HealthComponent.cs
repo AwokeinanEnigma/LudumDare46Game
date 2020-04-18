@@ -17,6 +17,7 @@ namespace LudumDare46Game
         void Start()
         {
             this.statComponent = gameObject.GetComponent<StatComponent>();
+            this.playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
             this.health = statComponent.baseHealth;
             this.isAlive = true;    
         }
