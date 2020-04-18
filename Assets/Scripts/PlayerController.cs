@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         speed = 10;
-        jumpHeight = 30;
+        jumpHeight = 1;
     }
 
     // Update is called once per frame
@@ -37,6 +37,6 @@ public class PlayerController : MonoBehaviour
             moveVertical = jumpHeight;
         }
 
-        playerRigidBody.AddForce(new Vector2  (moveHorizontal * speed, moveVertical));
+        playerRigidBody.velocity = (new Vector2  (moveHorizontal * speed, playerRigidBody.velocity.y + moveVertical));
     }
 }
