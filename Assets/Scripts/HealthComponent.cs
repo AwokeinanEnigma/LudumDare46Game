@@ -24,7 +24,7 @@ namespace LudumDare46Game
         {
             if (this.rejectAllDamage == true || !isAlive)
             {
-                Debug.Log("rejected damage!");
+                Debug.Log("rejectAllDamage is on or the healthcomponent's gameobject is fucking dead yo. ");
                 return;
             }
             if (damageInfo.crit == true) { damageInfo.damage = damageInfo.damage * 2; Debug.Log("attack was a crit, doubled damage");  };
