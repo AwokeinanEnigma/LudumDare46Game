@@ -13,10 +13,15 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private bool isTouchingGround;
 
+    public float speed;
+    public float jumpHeight;
+
     // Start is called before the first frame update
     void Start()
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
+        speed = 10;
+        jumpHeight = 30;
     }
 
     // Update is called once per frame
@@ -29,9 +34,9 @@ public class PlayerController : MonoBehaviour
         float moveVertical = 0;
         if (Input.GetAxis("Jump") >= 1 && isTouchingGround)
         {
-            moveVertical = 30;
+            moveVertical = jumpHeight;
         }
 
-        playerRigidBody.AddForce(new Vector2  (moveHorizontal, moveVertical));
+        playerRigidBody.AddForce(new Vector2  (moveHorizontal * speed, moveVertical));
     }
 }
