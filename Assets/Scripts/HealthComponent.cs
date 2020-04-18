@@ -20,7 +20,7 @@ namespace LudumDare46Game
             this.playerRigidBody = gameObject.GetComponent<Rigidbody2D>();
             this.health = statComponent.baseHealth;
             this.isAlive = true;    
-        }
+        }       
         public void TakeDamage(DamageInfo damageInfo)
         {
             if (this.rejectAllDamage == true || !isAlive)
