@@ -11,7 +11,6 @@ namespace LudumDare46Game
         public Vector3 position;
         public Vector3 force;
         public bool rejected;
-        public float procCoefficient = 1f;
     }
 }
 
