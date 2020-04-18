@@ -10,29 +10,34 @@ namespace LudumDare46Game
     public class HealthComponent : MonoBehaviour
     {
         private StatComponent statComponent;
+        private Rigidbody2D playerRigidBody;
         private float health;
         public bool rejectAllDamage;
+        private bool isAlive;
         void Start()
         {
             this.statComponent = gameObject.GetComponent<StatComponent>();
             this.health = statComponent.baseHealth;
+            this.isAlive = true;    
         }
         public void TakeDamage(DamageInfo damageInfo)
         {
-            if (this.rejectAllDamage == true)
+            if (this.rejectAllDamage == true || !isAlive)
             {
                 Debug.Log("rejected damage!");
                 return;
             }
-            if (damageInfo.crit == true)
-            {
-                damageInfo.damage = damageInfo.damage * 2;
-            }
+            if (damageInfo.crit == true) { damageInfo.damage = damageInfo.damage * 2; Debug.Log("attack was a crit, doubled damage");  };
+            this.playerRigidBody.AddForce(damageInfo.force);
+            this.health = this.health - damageInfo.damage;
+            //splitting heads, cutting teeth, feel your void split.
+            //must be tired of the noise.
         }
+
         // Update is called once per frame
         void Update()
         {
-            if (this.health <= 0) { Destroy(gameObject); };
+            if (this.health <= 0) { Destroy(gameObject); this.isAlive = false; };
         }
     }
 }
