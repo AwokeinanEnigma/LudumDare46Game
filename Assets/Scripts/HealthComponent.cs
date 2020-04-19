@@ -11,9 +11,9 @@ namespace LudumDare46Game
     {
         private StatComponent statComponent;
         private Rigidbody2D playerRigidBody;
-        private float health;
+        public float health;
         public bool rejectAllDamage;
-        private bool isAlive;
+        public bool isAlive;
         void Start()
         {
             this.statComponent = gameObject.GetComponent<StatComponent>();
@@ -33,6 +33,7 @@ namespace LudumDare46Game
             this.health = this.health - damageInfo.damage;
             //splitting heads, cutting teeth, feel your void split.
             //must be tired of the noise.
+
         }
 
         // Update is called once per frame
