@@ -57,7 +57,7 @@ namespace LudumDare46Game
 
         public static T AddOrGetComponent<T>(this GameObject g) where T : Component
         {
-            return (g.HasComponent<T>() ? g.GetComponent(typeof(T)) : g.AddComponent(typeof(T))) as T;
+            return (g .HasComponent<T>() ? g.GetComponent(typeof(T)) : g.AddComponent(typeof(T))) as T;
         }
 
         public static T AddOrGetComponent<T>(this MonoBehaviour m) where T : Component

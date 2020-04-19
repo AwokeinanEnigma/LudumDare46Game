@@ -4,9 +4,14 @@ using UnityEngine;
 
 namespace LudumDare46Game
 {
-
-    public class BlastAttack
+    public class Explosion
     {
+        public static Explosion instance;
+
+        public void Start()
+        {
+            instance = this;
+        }
         public void CreateExplosion(Vector2 location, float angle, DamageInfo damageInfo)
         {
             //fuck this stupid fucking unity plugin

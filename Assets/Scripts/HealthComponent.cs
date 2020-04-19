@@ -33,6 +33,7 @@ namespace LudumDare46Game
             this.health = this.health - damageInfo.damage;
             //splitting heads, cutting teeth, feel your void split.
             //must be tired of the noise.
+
         }
 
         // Update is called once per frame
