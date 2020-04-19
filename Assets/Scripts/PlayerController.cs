@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     {
         playerRigidBody = GetComponent<Rigidbody2D>();
         speed = 10;
-        jumpHeight = 1;
     }
 
     // Update is called once per frame
