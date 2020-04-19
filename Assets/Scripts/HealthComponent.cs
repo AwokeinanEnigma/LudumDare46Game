@@ -11,9 +11,9 @@ namespace LudumDare46Game
     {
         private StatComponent statComponent;
         private Rigidbody2D playerRigidBody;
-        private float health;
+        public float health;
         public bool rejectAllDamage;
-        private bool isAlive;
+        public bool isAlive;
         void Start()
         {
             this.statComponent = gameObject.GetComponent<StatComponent>();
